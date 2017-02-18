@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Weekend Challenge 2</title>
+<head>
+  <title>Weekend Challenge 2 - Carousel</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <script type="text/javascript" src="/vendor/jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 
-    <link rel="stylesheet" href="/styles/style.css" />
-
-    <script type="text/javascript" src="/vendor/jquery.min.js"></script>
-    <script type="text/javascript" src="/scripts/client.js"></script>
-
-  </head>
-  <body>
-    <h1>Weekend Challenge 2</h1>
-  </body>
+</head>
+<body>
+  <h1>Phi Cohort Carousel</h1>
+  <div>
+    <span id="phiMemberName"></span><br>
+    <span id="phiGitLink"></span><br>
+    <span id="phiShoutout"></span>
+  </div>
+  <div class="button">
+    <button type="button" id="nextButton">Next</button>
+  </div>
+  <div class="button">
+    <button type="button" id="prevButton">Prev</button>
+  </div>
+  <div id="indexDisplay"></div>
+</body>
 </html>
