@@ -12,20 +12,24 @@ $(document).ready(function(){
       // note -- console.log(data.phirephiters[0].name); will access property of object in array
 
       updateDOM(data.phirephiters);
+      indexDisplay(data.phirephiters);
+
 
     }
   })
 
 
 
-
-
-  function updateDOM (dataArray){
-    $('#phiMemberName').append(dataArray[4].name);
-    $('#phiGitLink').append(dataArray[4].git_username);
-    $('#phiShoutout').append(dataArray[4].shoutout);
+  function updateDOM(dataArray){
+    $('#phiMemberName').append(dataArray[0].name);
+    $('#phiGitLink').append(dataArray[0].git_username);
+    $('#phiShoutout').append(dataArray[0].shoutout);
   }
 
-
-
+  function indexDisplay(array) {
+    for (var i = 0; i < array.length; i++) {
+      array[i];
+      $('#indexHighlight').append('<div class="highlight"></div>');
+    }
+  }
 });

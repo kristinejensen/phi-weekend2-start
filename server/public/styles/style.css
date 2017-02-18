@@ -1,1 +1,8 @@
-
+.highlight {
+  background-color: SteelBlue;
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  border-style: dotted;
+  border-width: 1px;
+}
