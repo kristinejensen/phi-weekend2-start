@@ -11,16 +11,35 @@ $(document).ready(function(){
       // note -- console.log(data.phirephiters[0]); will access object in array
       // note -- console.log(data.phirephiters[0].name); will access property of object in array
 
-      updateDOM(data.phirephiters);
-      indexDisplay(data.phirephiters);
+      initialDOM(data.phirephiters); // calls initialDOM function when page is loaded to display first object in phirephiters array
+      indexDisplay(data.phirephiters); // calls indexDisplay function to display the index highlighter feature
+
+      var i = 1;
+
+      $('#nextButton').on('click', function(){
+        $('#phiMemberName').text(data.phirephiters[i].name);
+        $('#phiGitLink').text(data.phirephiters[i].git_username);
+        $('#phiShoutout').text(data.phirephiters[i].shoutout);
+        i++;
+        if (i >= 17) {
+        i = 16;
+      } // do not remove
+
+      }) // do not remove
+
+      $('#prevButton').on('click', function(){
+        i--;
+        $('#phiMemberName').text(data.phirephiters[i].name);
+        $('#phiGitLink').text(data.phirephiters[i].git_username);
+        $('#phiShoutout').text(data.phirephiters[i].shoutout);
+      }) // do not remove
+
+    } // do not remove
+  }) // do not remove
 
 
-    }
-  })
 
-
-
-  function updateDOM(dataArray){
+  function initialDOM(dataArray){
     $('#phiMemberName').append(dataArray[0].name);
     $('#phiGitLink').append(dataArray[0].git_username);
     $('#phiShoutout').append(dataArray[0].shoutout);
