@@ -22,9 +22,8 @@ $(document).ready(function(){
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
         i++;
         if (i >= 17) {
-        i = 16;
+        i = 0;
       } // do not remove
-
       }) // do not remove
 
       $('#prevButton').on('click', function(){
@@ -33,7 +32,7 @@ $(document).ready(function(){
         $('#phiGitLink').text(data.phirephiters[i].git_username);
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
         if (i <= 0) {
-        i = 1;
+        i = 17;
       }
       }) // do not remove
 
