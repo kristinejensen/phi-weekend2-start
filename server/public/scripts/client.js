@@ -32,6 +32,9 @@ $(document).ready(function(){
         $('#phiMemberName').text(data.phirephiters[i].name);
         $('#phiGitLink').text(data.phirephiters[i].git_username);
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
+        if (i <= 0) {
+        i = 1;
+      }
       }) // do not remove
 
     } // do not remove
