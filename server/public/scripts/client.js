@@ -11,8 +11,8 @@ $(document).ready(function(){
       // note -- console.log(data.phirephiters[0]); will access object in array
       // note -- console.log(data.phirephiters[0].name); will access property of object in array
 
-      initialDOM(data.phirephiters); // calls initialDOM function when page is loaded to display first object in phirephiters array
       indexDisplay(data.phirephiters); // calls indexDisplay function to display the index highlighter feature
+      initialDOM(data.phirephiters); // calls initialDOM function when page is loaded to display first object in phirephiters array
 
       var i = 0;
 
@@ -39,17 +39,16 @@ $(document).ready(function(){
 }) // do not remove
 
 
-
-
 function initialDOM(dataArray){
   $('#phiMemberName').append(dataArray[0].name);
   $('#phiGitLink').append(dataArray[0].git_username);
   $('#phiShoutout').append(dataArray[0].shoutout);
+  $('#0').css('background-color', 'Moccasin');
 }
 
 function indexDisplay(array) {
   for (var i = 0; i < array.length; i++) {
-    $('#indexHighlight').append('<div class="highlight" id="'+ i +'"></div>');
+    $('#indexHighlight').append('<div id="'+ i +'" class="highlight"></div>');
   }
 }
 });
