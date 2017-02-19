@@ -14,43 +14,42 @@ $(document).ready(function(){
       initialDOM(data.phirephiters); // calls initialDOM function when page is loaded to display first object in phirephiters array
       indexDisplay(data.phirephiters); // calls indexDisplay function to display the index highlighter feature
 
-      var i = 1;
+      var i = 0;
 
-      $('#nextButton').on('click', function(){
+      $('#nextButton').on('click', function(){ // next button event listener to update DOM
+        i++;
         $('#phiMemberName').text(data.phirephiters[i].name);
         $('#phiGitLink').text(data.phirephiters[i].git_username);
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
-        i++;
-        if (i >= 17) {
-        i = 0;
-      } // do not remove
+        if (i >= 16) { // resets i for carousel functionality
+          i = -1;
+        } // do not remove
       }) // do not remove
 
-      $('#prevButton').on('click', function(){
-        i--;
-        $('#phiMemberName').text(data.phirephiters[i].name);
-        $('#phiGitLink').text(data.phirephiters[i].git_username);
-        $('#phiShoutout').text(data.phirephiters[i].shoutout);
-        if (i <= 0) {
+      $('#prevButton').on('click', function(){ // prev button event listener to update DOM
+        if (i <= 0) { // resets 'i' for carousel functionality
         i = 17;
       }
-      }) // do not remove
-
-    } // do not remove
+      i--;
+      $('#phiMemberName').text(data.phirephiters[i].name);
+      $('#phiGitLink').text(data.phirephiters[i].git_username);
+      $('#phiShoutout').text(data.phirephiters[i].shoutout);
   }) // do not remove
+} // do not remove
+}) // do not remove
 
 
 
-  function initialDOM(dataArray){
-    $('#phiMemberName').append(dataArray[0].name);
-    $('#phiGitLink').append(dataArray[0].git_username);
-    $('#phiShoutout').append(dataArray[0].shoutout);
+function initialDOM(dataArray){
+  $('#phiMemberName').append(dataArray[0].name);
+  $('#phiGitLink').append(dataArray[0].git_username);
+  $('#phiShoutout').append(dataArray[0].shoutout);
+}
+
+function indexDisplay(array) {
+  for (var i = 0; i < array.length; i++) {
+    array[i];
+    $('#indexHighlight').append('<div class="highlight"></div>');
   }
-
-  function indexDisplay(array) {
-    for (var i = 0; i < array.length; i++) {
-      array[i];
-      $('#indexHighlight').append('<div class="highlight"></div>');
-    }
-  }
+}
 });
