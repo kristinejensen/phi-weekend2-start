@@ -14,8 +14,6 @@ $(document).ready(function(){
       initialDOM(data.phirephiters); // calls initialDOM function when page is loaded to display first object in phirephiters array
       indexDisplay(data.phirephiters); // calls indexDisplay function to display the index highlighter feature
 
-      console.log(data.phirephiters.length);
-
       var i = 0;
 
       $('#nextButton').on('click', function(){ // next button event listener to update DOM
@@ -42,6 +40,7 @@ $(document).ready(function(){
 
 
 
+
 function initialDOM(dataArray){
   $('#phiMemberName').append(dataArray[0].name);
   $('#phiGitLink').append(dataArray[0].git_username);
@@ -50,8 +49,7 @@ function initialDOM(dataArray){
 
 function indexDisplay(array) {
   for (var i = 0; i < array.length; i++) {
-    array[i];
-    $('#indexHighlight').append('<div class="highlight"></div>');
+    $('#indexHighlight').append('<div class="highlight" id="'+ i +'"></div>');
   }
 }
 });
