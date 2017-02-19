@@ -14,6 +14,8 @@ $(document).ready(function(){
       initialDOM(data.phirephiters); // calls initialDOM function when page is loaded to display first object in phirephiters array
       indexDisplay(data.phirephiters); // calls indexDisplay function to display the index highlighter feature
 
+      console.log(data.phirephiters.length);
+
       var i = 0;
 
       $('#nextButton').on('click', function(){ // next button event listener to update DOM
@@ -21,21 +23,21 @@ $(document).ready(function(){
         $('#phiMemberName').text(data.phirephiters[i].name);
         $('#phiGitLink').text(data.phirephiters[i].git_username);
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
-        if (i >= 16) { // resets i for carousel functionality
+        if (i >= data.phirephiters.length - 1) { // resets i for carousel functionality
           i = -1;
         } // do not remove
       }) // do not remove
 
       $('#prevButton').on('click', function(){ // prev button event listener to update DOM
         if (i <= 0) { // resets 'i' for carousel functionality
-        i = 17;
+        i = data.phirephiters.length;
       }
       i--;
       $('#phiMemberName').text(data.phirephiters[i].name);
       $('#phiGitLink').text(data.phirephiters[i].git_username);
       $('#phiShoutout').text(data.phirephiters[i].shoutout);
-  }) // do not remove
-} // do not remove
+    }) // do not remove
+  } // do not remove
 }) // do not remove
 
 
