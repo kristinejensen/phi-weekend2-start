@@ -19,27 +19,26 @@ $(document).ready(function(){
         i++;
         if (i >= data.phirephiters.length - 1) { // resets i for carousel functionality
           i = 0;
-        } // do not remove
+        }
         $('#'+ i).css('background-color', 'Moccasin');
         $('#phiMemberName').text(data.phirephiters[i].name);
         $('#phiGitLink').text(data.phirephiters[i].git_username);
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
-      }) // do not remove
+      })
 
       $('#prevButton').on('click', function(){ // prev button event listener to update DOM
         $('#' + i).css('background-color', 'Tomato');
         if (i <= 0) { // resets 'i' for carousel functionality
-          i = data.phirephiters.length;
-        }
-        i--;
-        $('#' + i).css('background-color', 'Moccasin');
-        $('#phiMemberName').text(data.phirephiters[i].name);
-        $('#phiGitLink').text(data.phirephiters[i].git_username);
-        $('#phiShoutout').text(data.phirephiters[i].shoutout);
-      }) // do not remove
-  } // do not remove
-}) // do not remove
-
+        i = data.phirephiters.length;
+      }
+      i--;
+      $('#' + i).css('background-color', 'Moccasin');
+      $('#phiMemberName').text(data.phirephiters[i].name);
+      $('#phiGitLink').text(data.phirephiters[i].git_username);
+      $('#phiShoutout').text(data.phirephiters[i].shoutout);
+    })
+  }
+})
 
 function initialDOM(dataArray){
   $('#phiMemberName').append(dataArray[0].name);
@@ -54,7 +53,3 @@ function indexDisplay(array) {
   }
 }
 });
-
-// while (i = 0){ --- this code breaks my loop
-//   $('#' + (i + data.phirephiters.length) - 1).css('background-color', 'Tomato');
-// }
