@@ -8,8 +8,6 @@ $(document).ready(function(){
       // yay! we have data!
       console.log('returned data from server: ', data);
       // DO NOT CHANGE ANY CODE ABOVE THIS LINE
-      // note -- console.log(data.phirephiters[0]); will access object in array
-      // note -- console.log(data.phirephiters[0].name); will access property of object in array
 
       indexDisplay(data.phirephiters); // calls indexDisplay function to display the index highlighter feature
       initialDOM(data.phirephiters); // calls initialDOM function when page is loaded to display first object in phirephiters array
@@ -17,29 +15,28 @@ $(document).ready(function(){
       var i = 0;
 
       $('#nextButton').on('click', function(){ // next button event listener to update DOM
+        $('#'+ i).css('background-color', 'Tomato');
         i++;
+        if (i >= data.phirephiters.length - 1) { // resets i for carousel functionality
+          i = 0;
+        } // do not remove
         $('#'+ i).css('background-color', 'Moccasin');
-        $('#'+ (i - 1)).css('background-color', 'Tomato');
         $('#phiMemberName').text(data.phirephiters[i].name);
         $('#phiGitLink').text(data.phirephiters[i].git_username);
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
-        if (i >= data.phirephiters.length - 1) { // resets i for carousel functionality
-          i = -1;
-        } // do not remove
       }) // do not remove
 
       $('#prevButton').on('click', function(){ // prev button event listener to update DOM
+        $('#' + i).css('background-color', 'Tomato');
         if (i <= 0) { // resets 'i' for carousel functionality
-        i = data.phirephiters.length;
-      }
-      i--;
-      console.log(i);
-      $('#' + i).css('background-color', 'Moccasin');
-      // NEED TO ADD ADDITIONAL CODE HERE TO UPDATE INDEX HIGHLIGHTER
-      $('#phiMemberName').text(data.phirephiters[i].name);
-      $('#phiGitLink').text(data.phirephiters[i].git_username);
-      $('#phiShoutout').text(data.phirephiters[i].shoutout);
-    }) // do not remove
+          i = data.phirephiters.length;
+        }
+        i--;
+        $('#' + i).css('background-color', 'Moccasin');
+        $('#phiMemberName').text(data.phirephiters[i].name);
+        $('#phiGitLink').text(data.phirephiters[i].git_username);
+        $('#phiShoutout').text(data.phirephiters[i].shoutout);
+      }) // do not remove
   } // do not remove
 }) // do not remove
 
