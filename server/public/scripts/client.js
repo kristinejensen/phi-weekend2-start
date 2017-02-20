@@ -18,12 +18,16 @@ $(document).ready(function(){
 
       $('#nextButton').on('click', function(){ // next button event listener to update DOM
         i++;
+        $('#'+ i).css('background-color', 'Moccasin');
+        $('#'+ (i - 1)).css('background-color', 'Tomato');
         $('#phiMemberName').text(data.phirephiters[i].name);
         $('#phiGitLink').text(data.phirephiters[i].git_username);
         $('#phiShoutout').text(data.phirephiters[i].shoutout);
         if (i >= data.phirephiters.length - 1) { // resets i for carousel functionality
           i = -1;
         } // do not remove
+
+        console.log(i);
       }) // do not remove
 
       $('#prevButton').on('click', function(){ // prev button event listener to update DOM
