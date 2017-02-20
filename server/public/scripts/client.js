@@ -26,8 +26,6 @@ $(document).ready(function(){
         if (i >= data.phirephiters.length - 1) { // resets i for carousel functionality
           i = -1;
         } // do not remove
-
-        console.log(i);
       }) // do not remove
 
       $('#prevButton').on('click', function(){ // prev button event listener to update DOM
@@ -35,6 +33,9 @@ $(document).ready(function(){
         i = data.phirephiters.length;
       }
       i--;
+      console.log(i);
+      $('#' + i).css('background-color', 'Moccasin');
+      // NEED TO ADD ADDITIONAL CODE HERE TO UPDATE INDEX HIGHLIGHTER
       $('#phiMemberName').text(data.phirephiters[i].name);
       $('#phiGitLink').text(data.phirephiters[i].git_username);
       $('#phiShoutout').text(data.phirephiters[i].shoutout);
@@ -56,3 +57,7 @@ function indexDisplay(array) {
   }
 }
 });
+
+// while (i = 0){ --- this code breaks my loop
+//   $('#' + (i + data.phirephiters.length) - 1).css('background-color', 'Tomato');
+// }
